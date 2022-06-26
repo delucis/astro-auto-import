@@ -16,7 +16,7 @@
     ".": "./dist/index.js"
   },
   "files": [
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "build": "tsc",
