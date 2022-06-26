@@ -5,7 +5,13 @@ import AutoImport from 'astro-auto-import';
 export default defineConfig({
   integrations: [
     AutoImport({
-      imports: ['./src/components/A.astro', './src/components/B.astro'],
+      imports: [
+        './src/components/A.astro',
+        {
+          './src/components/B.astro': [['default', 'B']],
+          'astro-embed': ['Tweet'],
+        },
+      ],
     }),
   ],
 });

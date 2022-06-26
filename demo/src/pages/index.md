@@ -9,4 +9,6 @@ The following two components are used without explicitly importing them in `setu
 <A />
 <B />
 
+<Tweet id="1537076865671778306" />
+
 - [Nested page](/nested)
