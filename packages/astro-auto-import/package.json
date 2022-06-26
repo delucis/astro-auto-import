@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublish": "pnpm run build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "astro-component",

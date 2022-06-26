@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build:demo": "cd demo && pnpm run build && cd ../",
+    "prepublish": "npm run build --workspace=astro-auto-import",
     "test": "npm run build:demo && tsm node_modules/uvu/bin.js test"
   },
   "devDependencies": {
