@@ -1,0 +1,21 @@
+{
+  "name": "@root/astro-auto-import",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "demo",
+    "packages/**/*"
+  ],
+  "scripts": {
+    "build:demo": "cd demo && pnpm run build && cd ../",
+    "test": "npm run build:demo && tsm node_modules/uvu/bin.js test"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.5",
+    "@changesets/cli": "^2.23.0",
+    "astro": "^1.0.0-beta.56",
+    "tsm": "^2.2.1",
+    "typescript": "^4.7.4",
+    "uvu": "^0.5.4"
+  }
+}
