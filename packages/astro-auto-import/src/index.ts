@@ -1,6 +1,13 @@
 import type { AstroIntegration } from 'astro';
 import { parse, resolve } from 'node:path';
 
+const resolveModulePath = (path: string) => {
+  // Resolve relative paths
+  if (path.startsWith('.')) return resolve(path);
+  // Don’t resolve other paths (e.g. npm modules)
+  return path;
+}
+
 export default function AutoImport({
   imports,
 }: {
@@ -15,7 +22,7 @@ export default function AutoImport({
 
         const script = [
           ...imports.map(
-            (i) => `import ${getComponentName(i)} from '${resolve(i)}';`
+            (i) => `import ${getComponentName(i)} from '${resolveModulePath(i)}';`
           ),
           ...imports.map(
             (i) => `global.${getComponentName(i)} = ${getComponentName(i)};`
