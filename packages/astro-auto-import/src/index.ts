@@ -36,7 +36,7 @@ function formatImport(imported: string, module: string): string {
 
 /** Create a statement assigning a variable to the global object. */
 function formatExposure(name: string) {
-  return `global.${name} = ${name};`;
+  return `globalThis.${name} = ${name};`;
 }
 
 /** Get the parts for a named import statement from config. */
