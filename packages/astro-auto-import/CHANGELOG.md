@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.1.2
+
+### Patch Changes
+
+- db1ac29: Internal: assign imports to `globalThis` instead of `global` — H/T @natemoo-re 🙌
+
 ## 0.1.1
 
 ### Patch Changes
