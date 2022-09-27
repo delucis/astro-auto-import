@@ -8,7 +8,6 @@ export default defineConfig({
     astroFlavoredMarkdown: true,
   },
   integrations: [
-    mdx(),
     AutoImport({
       imports: [
         './src/components/A.astro',
@@ -18,5 +17,6 @@ export default defineConfig({
         },
       ],
     }),
+    mdx(),
   ],
 });
