@@ -1,5 +1,15 @@
 # astro-auto-import
 
+## 0.2.0
+
+### Minor Changes
+
+- aa42e19: Add support for [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) 🎉
+
+  Auto-imports will now also be injected in `.mdx` files. You may need to remove manual imports if you were already using `astro-auto-import` v0.1.x with MDX.
+
+- 795e08e: Update to Astro v1 — remember to enable `legacy.astroFlavoredMarkdown` if you’re using components in `.md` files
+
 ## 0.1.2
 
 ### Patch Changes
