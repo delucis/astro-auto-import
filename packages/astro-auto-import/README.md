@@ -94,6 +94,12 @@ imports: [
 
 This config would import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
 
+### Using with MDX
+
+This integration is compatible with [`@astrojs/mdx`](https://docs.astro.build/en/guides/integrations-guide/mdx/), allowing you to auto-import into `.mdx` files.
+
+For this to work, make sure you add the auto-import integration **_before_** the MDX integration in your `integrations` array.
+
 ## License
 
 MIT
