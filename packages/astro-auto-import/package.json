@@ -23,7 +23,9 @@
     "prepublish": "npm run build"
   },
   "keywords": [
+    "withastro",
     "astro-component",
+    "astro-integration",
     "global",
     "auto-import"
   ],
