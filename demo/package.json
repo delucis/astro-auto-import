@@ -9,6 +9,7 @@
     "preview": "astro preview"
   },
   "devDependencies": {
+    "@astrojs/mdx": "^0.11.1",
     "astro": "^1.3.0",
     "astro-embed": "^0.1.0"
   }
