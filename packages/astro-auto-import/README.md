@@ -2,15 +2,14 @@
 
 This an Astro integration that allows you to auto-import components or other modules and access them in any page. Mainly useful to make components available in Markdown files without importing them in `setup`.
 
+> **Note**
+> Using components in Markdown with Astro v1 requires setting [the `legacy.astroFlavoredMarkdown` flag](https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown) in your config.
+
 ## Installation
 
 ```shell
 npm i astro-auto-import
 ```
-
-### Experimental status
-
-Third-party integrations are currently only supported behind a flag. You’ll need to update your Astro scripts to include the `--experimental-integrations` flag.
 
 ## Usage
 

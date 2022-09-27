@@ -3,6 +3,9 @@ import AutoImport from 'astro-auto-import';
 
 // https://astro.build/config
 export default defineConfig({
+  legacy: {
+    astroFlavoredMarkdown: true,
+  },
   integrations: [
     AutoImport({
       imports: [
