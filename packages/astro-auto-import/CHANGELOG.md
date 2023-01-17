@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.2.1
+
+### Patch Changes
+
+- 9c5c1d2: Allow installation in Astro v2 projects
+
 ## 0.2.0
 
 ### Minor Changes
