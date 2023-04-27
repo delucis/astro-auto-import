@@ -13,7 +13,7 @@ export default defineConfig({
         './src/components/A.astro',
         {
           './src/components/B.astro': [['default', 'B']],
-          'astro-embed': ['Tweet'],
+          'astro-embed': ['YouTube'],
         },
       ],
     }),
