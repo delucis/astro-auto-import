@@ -1,5 +1,16 @@
 # astro-auto-import
 
+## 0.3.0
+
+> **Warning**
+> This release includes breaking changes.
+> The minimum required Astro version is now 2.0 and auto-imports only work in MDX.
+
+### Minor Changes
+
+- ad941b0: Drop support for auto-importing in `.astro` files
+- ad941b0: Drop support for Astro v1
+
 ## 0.2.1
 
 ### Patch Changes
