@@ -85,12 +85,6 @@ function processImportsConfig(config: ImportsConfig) {
   return { imports, exposures };
 }
 
-/** Generate a JavaScript string from a full imports config array. */
-function generateScript(config: ImportsConfig) {
-  const { imports, exposures } = processImportsConfig(config);
-  return [...imports, ...exposures].join('\n');
-}
-
 /** Get an MDX node representing a block of imports based on user config. */
 function generateImportsNode(config: ImportsConfig): MdxjsEsm {
   const { imports } = processImportsConfig(config);
@@ -113,14 +107,7 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
   return {
     name: 'auto-import',
     hooks: {
-      'astro:config:setup': ({ injectScript, config, updateConfig }) => {
-        // Inject our import + expose scripts for `.astro` and legacy `.md` support.
-        injectScript('page-ssr', generateScript(integrationConfig.imports));
-
-        const hasMarkdownPlugins = !!(
-          config.markdown.remarkPlugins.length || config.markdown.rehypePlugins.length
-        );
-
+      'astro:config:setup': ({ config, updateConfig }) => {
         // Check MDX integration is initialized after auto-import.
         const mdxIndex = config.integrations.findIndex((i) => i.name === '@astrojs/mdx');
         const thisIndex = config.integrations.findIndex((i) => i.name === 'auto-import');
@@ -139,7 +126,6 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         const importsNode = generateImportsNode(integrationConfig.imports);
         updateConfig({
           markdown: {
-            extendDefaultPlugins: config.markdown.extendDefaultPlugins ?? !hasMarkdownPlugins,
             remarkPlugins: [
               function rehypeInjectMdxImports() {
                 return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {

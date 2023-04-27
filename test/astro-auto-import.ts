@@ -13,22 +13,15 @@ function checkPage(page: string) {
   // Aliased default import
   assert.match(page, /<p>Component B<\/p>/);
   // Named import
-  assert.match(
-    page,
-    /Tune in for your recap of developments, contributions, and community news./
-  );
+  assert.match(page, /<lite-youtube videoid="Hoe-woAhq_k".+><\/lite-youtube>/);
 }
 
-test('it should render components in a root-level Markdown file', () => {
+test('it should render components in a root-level MDX file', () => {
   checkPage(loadPage('/'));
 });
 
-test('it should render components in a nested Markdown file', () => {
+test('it should render components in a nested MDX file', () => {
   checkPage(loadPage('/nested'));
-});
-
-test('it should render components in an MDX file', () => {
-  checkPage(loadPage('/mdx'));
 });
 
 test.run();
