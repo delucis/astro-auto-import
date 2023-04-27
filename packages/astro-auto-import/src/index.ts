@@ -117,10 +117,6 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         // Inject our import + expose scripts for `.astro` and legacy `.md` support.
         injectScript('page-ssr', generateScript(integrationConfig.imports));
 
-        const hasMarkdownPlugins = !!(
-          config.markdown.remarkPlugins.length || config.markdown.rehypePlugins.length
-        );
-
         // Check MDX integration is initialized after auto-import.
         const mdxIndex = config.integrations.findIndex((i) => i.name === '@astrojs/mdx');
         const thisIndex = config.integrations.findIndex((i) => i.name === 'auto-import');
@@ -139,7 +135,6 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         const importsNode = generateImportsNode(integrationConfig.imports);
         updateConfig({
           markdown: {
-            extendDefaultPlugins: config.markdown.extendDefaultPlugins ?? !hasMarkdownPlugins,
             remarkPlugins: [
               function rehypeInjectMdxImports() {
                 return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
