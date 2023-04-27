@@ -1,5 +1,12 @@
 # astro-auto-import
 
+## 0.3.0
+
+### Minor Changes
+
+- ad941b0: Drop support for auto-importing in `.astro` files
+- ad941b0: Drop support for Astro v1
+
 ## 0.2.1
 
 ### Patch Changes
