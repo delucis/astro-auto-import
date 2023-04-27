@@ -1,11 +1,17 @@
 # astro-auto-import
 
-This an Astro integration that allows you to auto-import components or other modules and access them in any page. Mainly useful to make components available in MDX files without importing them.
+This an Astro integration that allows you to auto-import components or other modules and access them in MDX files without importing them.
 
 ## Installation
 
 ```shell
 npm i astro-auto-import
+```
+
+If you aren’t already using MDX, you’ll need to add it too:
+
+```shell
+npx astro add mdx
 ```
 
 ## Usage
@@ -94,10 +100,6 @@ imports: [
 ```
 
 This config would import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
-
-### Using in `.astro` files
-
-You can use auto-imported components in `.astro` files, but this library intentionally avoids providing types for them as this practice is discouraged. An explicit `import` statement is preferable.
 
 ## License
 
