@@ -1,9 +1,6 @@
 # astro-auto-import
 
-This an Astro integration that allows you to auto-import components or other modules and access them in any page. Mainly useful to make components available in Markdown files without importing them in `setup`.
-
-> **Note**
-> Using components in Markdown with Astro v1 requires setting [the `legacy.astroFlavoredMarkdown` flag](https://docs.astro.build/en/reference/configuration-reference/#legacyastroflavoredmarkdown) in your config.
+This an Astro integration that allows you to auto-import components or other modules and access them in any page. Mainly useful to make components available in MDX files without importing them.
 
 ## Installation
 
@@ -18,6 +15,7 @@ Import the integration and add it to your `astro.config.*` file:
 ```js
 import { defineConfig } from 'astro/config';
 import AutoImport from 'astro-auto-import';
+import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   integrations: [
@@ -41,6 +39,9 @@ export default defineConfig({
         },
       ],
     }),
+
+    // Make sure the MDX integration is included AFTER astro-auto-import
+    mdx(),
   ],
 });
 ```
@@ -94,11 +95,9 @@ imports: [
 
 This config would import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
 
-### Using with MDX
+### Using in `.astro` files
 
-This integration is compatible with [`@astrojs/mdx`](https://docs.astro.build/en/guides/integrations-guide/mdx/), allowing you to auto-import into `.mdx` files.
-
-For this to work, make sure you add the auto-import integration **_before_** the MDX integration in your `integrations` array.
+You can use auto-imported components in `.astro` files, but this library intentionally avoids providing types for them as this practice is discouraged. An explicit `import` statement is preferable.
 
 ## License
 
