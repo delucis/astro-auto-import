@@ -38,7 +38,7 @@
     "acorn": "^8.8.0"
   },
   "peerDependencies": {
-    "astro": "^2.0.0"
+    "astro": "^2.0.0 || ^3.0.0-beta"
   },
   "engines": {
     "node": ">=16.0.0"
