@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.3.1
+
+### Patch Changes
+
+- 75f332a: Add support for Astro 3.0.0 incl. prereleases
+
 ## 0.3.0
 
 > **Warning**
