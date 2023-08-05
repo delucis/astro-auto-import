@@ -1,7 +1,7 @@
 {
   "name": "astro-auto-import",
   "description": "Auto-import components in Astro projects",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "types": "./dist/index.d.ts",
   "author": "Chris Swithinbank <swithinbank@gmail.com> (http://chrisswithinbank.net/)",
