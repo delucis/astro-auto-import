@@ -34,7 +34,7 @@ function getDefaultImportName(path: string): string {
  * @param module Module to import from (e.g. `module-thing`)
  */
 function formatImport(imported: string, module: string): string {
-  return `import ${imported} from '${module}';`;
+  return `import ${imported} from ${JSON.stringify(module)};`;
 }
 
 /** Create a statement assigning a variable to the global object. */
