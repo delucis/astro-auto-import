@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.3.2
+
+### Patch Changes
+
+- 8baeeae: Fix Windows compatibility
+
 ## 0.3.1
 
 ### Patch Changes
