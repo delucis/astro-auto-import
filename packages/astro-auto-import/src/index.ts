@@ -37,62 +37,44 @@ function formatImport(imported: string, module: string): string {
   return `import ${imported} from ${JSON.stringify(module)};`;
 }
 
-/** Create a statement assigning a variable to the global object. */
-function formatExposure(name: string) {
-  return `globalThis.${name} = ${name};`;
-}
-
 /** Get the parts for a named import statement from config. */
-function formatNamedImports(
-  namedImport: NamedImportConfig[]
-): [importString: string, exposures: string[]] {
+function formatNamedImports(namedImport: NamedImportConfig[]): string {
   const imports: string[] = [];
-  const exposedNames: string[] = [];
-
   for (const imp of namedImport) {
     if (typeof imp === 'string') {
       imports.push(imp);
-      exposedNames.push(imp);
     } else {
       const [from, as] = imp;
       imports.push(`${from} as ${as}`);
-      exposedNames.push(as);
     }
   }
-
-  return [`{ ${imports.join(', ')} }`, exposedNames.map(formatExposure)];
+  return `{ ${imports.join(', ')} }`;
 }
 
-/** Generate imports and exposures from a full imports config array. */
+/** Generate imports from a full imports config array. */
 function processImportsConfig(config: ImportsConfig) {
   const imports = [];
-  const exposures = [];
-
   for (const option of config) {
     if (typeof option === 'string') {
       imports.push(formatImport(getDefaultImportName(option), resolveModulePath(option)));
-      exposures.push(formatExposure(getDefaultImportName(option)));
     } else {
       for (const path in option) {
         const namedImportsOrNamespace = option[path];
         if (typeof namedImportsOrNamespace === 'string') {
           imports.push(formatImport(`* as ${namedImportsOrNamespace}`, resolveModulePath(path)));
-          exposures.push(formatExposure(namedImportsOrNamespace));
         } else {
-          const [importString, exposureArray] = formatNamedImports(namedImportsOrNamespace);
+          const importString = formatNamedImports(namedImportsOrNamespace);
           imports.push(formatImport(importString, resolveModulePath(path)));
-          exposures.push(...exposureArray);
         }
       }
     }
   }
-
-  return { imports, exposures };
+  return imports;
 }
 
 /** Get an MDX node representing a block of imports based on user config. */
 function generateImportsNode(config: ImportsConfig): MdxjsEsm {
-  const { imports } = processImportsConfig(config);
+  const imports = processImportsConfig(config);
   const js = imports.join('\n');
   return {
     type: 'mdxjsEsm',
