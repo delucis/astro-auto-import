@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.1
+
+### Patch Changes
+
+- 5b9b278: Improve README
+
 ## 0.4.0
 
 ### Minor Changes
