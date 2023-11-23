@@ -12,7 +12,7 @@ const resolveModulePath = (path: string) => {
 };
 
 type NamedImportConfig = string | [from: string, as: string];
-type ImportsConfig = (string | Record<string, NamedImportConfig[]>)[];
+type ImportsConfig = (string | Record<string, string | NamedImportConfig[]>)[];
 
 interface AutoImportConfig {
   imports: ImportsConfig;
@@ -74,13 +74,12 @@ function processImportsConfig(config: ImportsConfig) {
       exposures.push(formatExposure(getDefaultImportName(option)));
     } else {
       for (const path in option) {
-        if (typeof option[path] === 'string') {
-          const namespace = option[path];
-          imports.push(formatImport(`* as ${namespace}`, resolveModulePath(path)));
-          exposures.push(formatExposure(namespace));
+        const namedImportsOrNamespace = option[path];
+        if (typeof namedImportsOrNamespace === 'string') {
+          imports.push(formatImport(`* as ${namedImportsOrNamespace}`, resolveModulePath(path)));
+          exposures.push(formatExposure(namedImportsOrNamespace));
         } else {
-          const namedImports = option[path];
-          const [importString, exposureArray] = formatNamedImports(namedImports);
+          const [importString, exposureArray] = formatNamedImports(namedImportsOrNamespace);
           imports.push(formatImport(importString, resolveModulePath(path)));
           exposures.push(...exposureArray);
         }
