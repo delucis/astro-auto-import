@@ -14,6 +14,7 @@ export default defineConfig({
         {
           './src/components/B.astro': [['default', 'B']],
           'astro-embed': ['YouTube'],
+          './src/components/barrel.ts': 'Barrel',
         },
       ],
     }),
