@@ -74,10 +74,16 @@ function processImportsConfig(config: ImportsConfig) {
       exposures.push(formatExposure(getDefaultImportName(option)));
     } else {
       for (const path in option) {
-        const namedImports = option[path];
-        const [importString, exposureArray] = formatNamedImports(namedImports);
-        imports.push(formatImport(importString, resolveModulePath(path)));
-        exposures.push(...exposureArray);
+        if (typeof option[path] === 'string') {
+          const namespace = option[path];
+          imports.push(formatImport(`* as ${namespace}`, resolveModulePath(path)));
+          exposures.push(formatExposure(namespace));
+        } else {
+          const namedImports = option[path];
+          const [importString, exposureArray] = formatNamedImports(namedImports);
+          imports.push(formatImport(importString, resolveModulePath(path)));
+          exposures.push(...exposureArray);
+        }
       }
     }
   }
