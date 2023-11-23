@@ -42,6 +42,11 @@ export default defineConfig({
           // generates:
           // import { Tweet, YouTube } from 'astro-embed';
           'astro-embed': ['Tweet', 'YouTube'],
+
+          // Import all named exports from a module as a namespace
+          // generates:
+          // import * as Components from './src/components';
+          './src/components': 'Components',
         },
       ],
     }),
