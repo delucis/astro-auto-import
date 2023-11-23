@@ -1,5 +1,28 @@
 # astro-auto-import
 
+## 0.4.0
+
+### Minor Changes
+
+- ec5f241: Added support for namespace imports, for importing all named exports from a module.
+
+  ```js
+  AutoImport({
+    imports: [
+      {
+        // Import all named exports from a module as a namespace
+        // generates:
+        // import * as Components from './src/components';
+        './src/components': 'Components',
+      },
+    ],
+  }),
+  ```
+
+### Patch Changes
+
+- ea93946: refactor: strip out old “exposures” code
+
 ## 0.3.2
 
 ### Patch Changes
