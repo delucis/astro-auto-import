@@ -24,4 +24,8 @@ test('it should render components in a nested MDX file', () => {
   checkPage(loadPage('/nested'));
 });
 
+test('it should render components imported from a barrel module', () => {
+  checkPage(loadPage('/barrel'));
+});
+
 test.run();
