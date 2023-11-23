@@ -70,17 +70,21 @@ An array of items that configure what files are imported and how.
 For Astro components or other files that have a default export, the easiest option is to provide their path and they will be imported with a name based on the file name.
 
 ```js
-imports: [
-  './src/components/A.astro',
-  './src/components/react/ReactComponent.tsx',
-];
+imports: ['./src/components/A.astro', './src/components/react/ReactComponent.tsx'];
 ```
 
-The above config would import `A` and `ReactComponent` respectively, so they could be used as `<A />` or `<ReactComponent />`.
+The above config will import `A` and `ReactComponent` respectively, so they could be used as `<A />` or `<ReactComponent />`.
+
+###### Equivalent to
+
+```js
+import A from './src/components/A.astro';
+import ReactComponent from './src/components/react/ReactComponent.tsx';
+```
 
 ##### Named exports
 
-For script modules or component frameworks that can used named exports, you can pass an object mapping the module to the names you want to import.
+For script modules or component frameworks that can use named exports, you can pass an object mapping the module to the names you want to import.
 
 ```js
 imports: [
@@ -90,7 +94,13 @@ imports: [
 ];
 ```
 
-This config would import both the `Twitter` and `YouTube` components from the `astro-embed` package.
+This config will import both the `Twitter` and `YouTube` components from the `astro-embed` package.
+
+###### Equivalent to
+
+```js
+import { Twitter, YouTube } from 'astro-embed';
+```
 
 #### Import aliasing
 
@@ -104,7 +114,33 @@ imports: [
 ];
 ```
 
-This config would import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
+This config will import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
+
+###### Equivalent to
+
+```js
+import { default as RenamedB } from './src/components/B.astro';
+```
+
+#### Namespace import
+
+If you want to import all the named exports in a file to a namespace, you can pass a string to set the namespace to import to:
+
+```js
+imports: [
+  {
+    './src/components/index': 'Components',
+  },
+];
+```
+
+This config would import all the components in an index file, making them available as `<Components.A />`, `<Components.B />` etc.
+
+###### Equivalent to
+
+```js
+import * as Components from './src/components/index';
+```
 
 ## License
 
