@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.2
+
+### Patch Changes
+
+- 13b07e1: Support Astro v4
+
 ## 0.4.1
 
 ### Patch Changes
