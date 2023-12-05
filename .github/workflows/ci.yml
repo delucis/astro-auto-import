@@ -36,8 +36,7 @@ jobs:
       - run: npm i astro@${{ matrix.astro }}
       - run: npm i astro@${{ matrix.astro }}
         working-directory: packages/astro-auto-import
-      - run: npm i astro@${{ matrix.astro }}
-      - run: npm i @astrojs/mdx@${{ env.MDX_VERSION }}
+      - run: npm i astro@${{ matrix.astro }} @astrojs/mdx@${{ env.MDX_VERSION }}
         env:
           MDX_VERSION: ${{ matrix.astro == '^2' && '0.19.7' || matrix.astro == '^3' && '^1' || '^2' }}
         working-directory: demo
