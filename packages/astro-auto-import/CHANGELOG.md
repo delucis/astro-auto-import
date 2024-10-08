@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.3
+
+### Patch Changes
+
+- d7fdae6: Add `utility` keyword for better categorization in the Astro integrations library
+
 ## 0.4.2
 
 ### Patch Changes
