@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.4
+
+### Patch Changes
+
+- f7c02dc: Adds support for Astro v5
+
 ## 0.4.3
 
 ### Patch Changes
