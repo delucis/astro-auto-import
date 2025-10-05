@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.5
+
+### Patch Changes
+
+- [`8538321`](https://github.com/delucis/astro-auto-import/commit/853832156e8e58bfb2c1be864bee5e53fab86bd9) Thanks [@delucis](https://github.com/delucis)! - No code changes. This release is the first published using OIDC trusted publisher configuration for improved security.
+
 ## 0.4.4
 
 ### Patch Changes
