@@ -17,7 +17,7 @@ jobs:
       matrix:
         node: [18.x]
         os: [ubuntu-latest, windows-latest]
-        astro: [^2, ^3, ^4]
+        astro: [^2, ^3, ^4, ^5]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -38,7 +38,7 @@ jobs:
         working-directory: packages/astro-auto-import
       - run: npm i astro@${{ matrix.astro }} @astrojs/mdx@${{ env.MDX_VERSION }}
         env:
-          MDX_VERSION: ${{ matrix.astro == '^2' && '0.19.7' || matrix.astro == '^3' && '^1' || '^2' }}
+          MDX_VERSION: ${{ matrix.astro == '^2' && '0.19.7' || matrix.astro == '^3' && '^1' || matrix.astro == '^4' && '^3' || '^4' }}
         working-directory: demo
 
       - name: Test
