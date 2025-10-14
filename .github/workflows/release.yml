@@ -20,21 +20,21 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
           persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444
+        uses: actions/setup-node@13427813f706a0f6c9b74603b31103c40ab1c35a
         with:
-          node-version: 24
+          node-version: 24.9.0
       - name: Install Dependencies
         run: npm ci
 
       - name: Create Release Pull Request
-        uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba
+        uses: changesets/action@04d574e831923498156e0b2b93152878063203a3
         with:
           publish: npx changeset publish
         env:
