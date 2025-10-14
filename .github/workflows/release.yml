@@ -27,7 +27,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@13427813f706a0f6c9b74603b31103c40ab1c35a
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
           node-version: 24.9.0
       - name: Install Dependencies
