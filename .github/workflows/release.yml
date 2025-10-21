@@ -27,14 +27,14 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
+        uses: actions/setup-node@dda4788290998366da86b6a4f497909644397bb2
         with:
           node-version: 24.10.0
       - name: Install Dependencies
         run: npm ci
 
       - name: Create Release Pull Request
-        uses: changesets/action@e0145edc7d9d8679003495b11f87bd8ef63c0cba
+        uses: changesets/action@04d574e831923498156e0b2b93152878063203a3
         with:
           publish: npx changeset publish
         env:
