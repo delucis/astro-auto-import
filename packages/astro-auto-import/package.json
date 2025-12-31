@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublish": "pnpm run build"
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "withastro",

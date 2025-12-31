@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build:demo": "cd demo && pnpm run build && cd ../",
-    "prepublish": "pnpm --filter astro-auto-import build",
-    "test": "pnpm run build:demo && tsm node_modules/uvu/bin.js test"
+    "test": "pnpm -r build && tsm node_modules/uvu/bin.js test"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.5.2",
