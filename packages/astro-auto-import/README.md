@@ -116,7 +116,7 @@ imports: [
 
 This config will import the Astro component in `src/components/B.astro` but make it available as `<RenamedB />`.
 
-###### Equivalent to
+##### Equivalent to
 
 ```js
 import { default as RenamedB } from './src/components/B.astro';
@@ -136,7 +136,7 @@ imports: [
 
 This config would import all the components in an index file, making them available as `<Components.A />`, `<Components.B />` etc.
 
-###### Equivalent to
+##### Equivalent to
 
 ```js
 import * as Components from './src/components/index';
