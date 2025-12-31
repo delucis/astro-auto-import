@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.5.1
+
+### Patch Changes
+
+- [#68](https://github.com/delucis/astro-auto-import/pull/68) [`6028a93`](https://github.com/delucis/astro-auto-import/commit/6028a93a1fad5fe47c378b9bb3e05a8ab8a17ffa) Thanks [@renovate](https://github.com/apps/renovate)! - Updates dependency acorn to ^8.15.0
+
 ## 0.5.0
 
 ### Minor Changes
