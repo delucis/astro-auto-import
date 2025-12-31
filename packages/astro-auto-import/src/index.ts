@@ -81,6 +81,7 @@ function generateImportsNode(config: ImportsConfig): MdxjsEsm {
     value: '',
     data: {
       estree: {
+        // @ts-expect-error - Latest `acorn` types don’t align with MDX types.
         body: [],
         ...parseJs(js, { ecmaVersion: 'latest', sourceType: 'module' }),
         type: 'Program',
