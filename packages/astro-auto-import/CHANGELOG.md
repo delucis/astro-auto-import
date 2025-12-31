@@ -1,5 +1,17 @@
 # astro-auto-import
 
+## 0.5.0
+
+### Minor Changes
+
+- [#94](https://github.com/delucis/astro-auto-import/pull/94) [`ebf1705`](https://github.com/delucis/astro-auto-import/commit/ebf17054e9ed90b3c8811aa8c09bd8b691ee5b14) Thanks [@delucis](https://github.com/delucis)! - Drops official support for Astro 2, 3, and 4. Use Astro 5 instead.
+
+- [#94](https://github.com/delucis/astro-auto-import/pull/94) [`ebf1705`](https://github.com/delucis/astro-auto-import/commit/ebf17054e9ed90b3c8811aa8c09bd8b691ee5b14) Thanks [@delucis](https://github.com/delucis)! - Drops official support for Node.js 16 and 18. Use Node >=20 instead.
+
+### Patch Changes
+
+- [#94](https://github.com/delucis/astro-auto-import/pull/94) [`ebf1705`](https://github.com/delucis/astro-auto-import/commit/ebf17054e9ed90b3c8811aa8c09bd8b691ee5b14) Thanks [@delucis](https://github.com/delucis)! - Adds experimental support for Astro 6.
+
 ## 0.4.6
 
 ### Patch Changes
