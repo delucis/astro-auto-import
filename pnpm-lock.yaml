@@ -35,6 +35,9 @@ importers:
       astro:
         specifier: ^2.3.0
         version: 2.3.0(@types/node@18.19.130)
+      astro-auto-import:
+        specifier: workspace:*
+        version: link:../packages/astro-auto-import
       astro-embed:
         specifier: ^0.6.1
         version: 0.6.1(astro@2.3.0(@types/node@18.19.130))
