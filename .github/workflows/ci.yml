@@ -18,7 +18,7 @@ jobs:
       matrix:
         node: [20.x]
         os: [ubuntu-latest, windows-latest]
-        astro: [^5]
+        astro: [^5, ^6.0.0-alpha]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -44,7 +44,7 @@ jobs:
         working-directory: packages/astro-auto-import
       - run: pnpm i astro@${{ matrix.astro }} @astrojs/mdx@${{ env.MDX_VERSION }}
         env:
-          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || '^5' }}
+          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || '^5.0.0-alpha' }}
         working-directory: demo
 
       - name: Test
