@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm run build"
+    "prepublishOnly": "pnpm run build"
   },
   "keywords": [
     "withastro",
@@ -32,7 +32,9 @@
   ],
   "devDependencies": {
     "astro": "^2.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "mdast-util-mdx": "^3.0.0",
+    "vfile": "^6.0.3"
   },
   "dependencies": {
     "@types/node": "^18.19.130",
