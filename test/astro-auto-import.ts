@@ -13,7 +13,7 @@ function checkPage(page: string) {
   // Aliased default import
   assert.match(page, /<p>Component B<\/p>/);
   // Named import
-  assert.match(page, /<lite-youtube videoid="Hoe-woAhq_k".+><\/lite-youtube>/);
+  assert.match(page, /<lite-youtube videoid="Hoe-woAhq_k".+>.+<\/lite-youtube>/);
 }
 
 test('it should render components in a root-level MDX file', () => {
