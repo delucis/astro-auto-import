@@ -31,13 +31,13 @@
     "auto-import"
   ],
   "devDependencies": {
+    "@types/node": "^18.19.130",
     "astro": "^2.3.0",
     "typescript": "^5.9.3",
     "mdast-util-mdx": "^3.0.0",
     "vfile": "^6.0.3"
   },
   "dependencies": {
-    "@types/node": "^18.19.130",
     "acorn": "^8.8.0"
   },
   "peerDependencies": {

@@ -2,4 +2,4 @@
 "astro-auto-import": patch
 ---
 
-Update dependency @types/node to ^18.19.130
+Makes `@types/node` a dev dependency
