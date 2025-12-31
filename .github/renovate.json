@@ -1,24 +1,4 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": [
-		"config:recommended",
-		":disableDependencyDashboard",
-		":disablePeerDependencies",
-		"helpers:pinGitHubActionDigestsToSemver"
-	],
-	"rangeStrategy": "bump",
-	"ignorePaths": ["**/node_modules/**"],
-	"minimumReleaseAge": "3 days",
-	"postUpdateOptions": ["pnpmDedupe"],
-	"packageRules": [
-		{
-			"groupName": "github-actions",
-			"matchManagers": ["github-actions"]
-		},
-		{
-			"groupName": "astro",
-			"matchDatasources": ["npm"],
-			"matchPackageNames": ["astro", "@astrojs/**"]
-		}
-	]
+	"extends": ["local>delucis/renovate-config"]
 }
