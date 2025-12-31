@@ -1,5 +1,11 @@
 # astro-auto-import
 
+## 0.4.6
+
+### Patch Changes
+
+- [#67](https://github.com/delucis/astro-auto-import/pull/67) [`130cc32`](https://github.com/delucis/astro-auto-import/commit/130cc328af1c57489bacadb519ebc883c55db60b) Thanks [@renovate](https://github.com/apps/renovate)! - Makes `@types/node` a dev dependency
+
 ## 0.4.5
 
 ### Patch Changes
