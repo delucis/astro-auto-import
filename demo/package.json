@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^4.3.13",
-    "astro": "^5.16.16",
+    "astro": "^5.17.0",
     "astro-auto-import": "workspace:*",
     "astro-embed": "^0.12.0"
   }
