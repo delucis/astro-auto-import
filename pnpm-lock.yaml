@@ -15,7 +15,7 @@ importers:
         specifier: ^2.29.8
         version: 2.29.8(@types/node@20.19.30)
       astro:
-        specifier: ^5.17.0
+        specifier: ^5.17.1
         version: 5.17.1(@types/node@20.19.30)(rollup@4.54.0)(typescript@5.9.3)
       tsm:
         specifier: ^2.3.0
@@ -33,7 +33,7 @@ importers:
         specifier: ^4.3.13
         version: 4.3.13(astro@5.17.1(@types/node@20.19.30)(rollup@4.54.0)(typescript@5.9.3))
       astro:
-        specifier: ^5.17.0
+        specifier: ^5.17.1
         version: 5.17.1(@types/node@20.19.30)(rollup@4.54.0)(typescript@5.9.3)
       astro-auto-import:
         specifier: workspace:*
@@ -52,7 +52,7 @@ importers:
         specifier: ^20.19.30
         version: 20.19.30
       astro:
-        specifier: ^5.17.0
+        specifier: ^5.17.1
         version: 5.17.1(@types/node@20.19.30)(rollup@4.54.0)(typescript@5.9.3)
       mdast-util-mdx:
         specifier: ^3.0.0
