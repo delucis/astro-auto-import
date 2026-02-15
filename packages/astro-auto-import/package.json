@@ -31,7 +31,7 @@
     "auto-import"
   ],
   "devDependencies": {
-    "@types/node": "^20.19.30",
+    "@types/node": "^20.19.33",
     "astro": "^5.17.1",
     "mdast-util-mdx": "^3.0.0",
     "typescript": "^5.9.3",
