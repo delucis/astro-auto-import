@@ -1,0 +1,16 @@
+---
+layout: ../layouts/Layout.astro
+---
+import CustomLink from '../components/CustomLink.astro';
+
+export const components = {
+  a: CustomLink,
+};
+
+# Page with custom components export
+
+This page defines its own `components` export, so the auto-import defaultComponents should be skipped.
+
+This paragraph should NOT have the custom-paragraph class.
+
+[This link](/nested) should have the custom-link class from the local export.

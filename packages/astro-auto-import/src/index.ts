@@ -14,8 +14,18 @@ const resolveModulePath = (path: string) => {
 type NamedImportConfig = string | [from: string, as: string];
 type ImportsConfig = (string | Record<string, string | NamedImportConfig[]>)[];
 
+/** Config for a named export from a module */
+interface NamedExportConfig {
+  name: string;
+  from: string;
+}
+
+/** Map of element names to component paths or named export configs */
+type DefaultComponentsConfig = Record<string, string | NamedExportConfig>;
+
 interface AutoImportConfig {
-  imports: ImportsConfig;
+  imports?: ImportsConfig;
+  defaultComponents?: DefaultComponentsConfig;
 }
 
 /**
@@ -72,10 +82,42 @@ function processImportsConfig(config: ImportsConfig) {
   return imports;
 }
 
-/** Get an MDX node representing a block of imports based on user config. */
-function generateImportsNode(config: ImportsConfig): MdxjsEsm {
-  const imports = processImportsConfig(config);
-  const js = imports.join('\n');
+/** Prefix used for default component imports to avoid name clashes */
+const DEFAULT_COMPONENT_PREFIX = 'AUTO_IMPORT_';
+
+/** Generate imports and export statement for default components config. */
+function processDefaultComponentsConfig(config: DefaultComponentsConfig) {
+  const imports: string[] = [];
+  const componentEntries: string[] = [];
+
+  for (const elementName in config) {
+    const componentConfig = config[elementName];
+    const importName = `${DEFAULT_COMPONENT_PREFIX}${elementName}`;
+
+    if (typeof componentConfig === 'string') {
+      // Default export: import AUTO_IMPORT_p from './src/CustomParagraph.astro';
+      imports.push(formatImport(importName, resolveModulePath(componentConfig)));
+    } else {
+      // Named export: import { CustomBlockquote as AUTO_IMPORT_blockquote } from './src/Components.ts';
+      imports.push(
+        formatImport(
+          `{ ${componentConfig.name} as ${importName} }`,
+          resolveModulePath(componentConfig.from)
+        )
+      );
+    }
+
+    componentEntries.push(`${elementName}: ${importName}`);
+  }
+
+  // Generate: export const components = { p: AUTO_IMPORT_p, blockquote: AUTO_IMPORT_blockquote };
+  const exportStatement = `export const components = { ${componentEntries.join(', ')} };`;
+
+  return { imports, exportStatement };
+}
+
+/** Get an MDX node representing a block of JS (imports and/or exports) based on user config. */
+function generateMdxEsmNode(js: string): MdxjsEsm {
   return {
     type: 'mdxjsEsm',
     value: '',
@@ -89,6 +131,52 @@ function generateImportsNode(config: ImportsConfig): MdxjsEsm {
       },
     },
   };
+}
+
+/** Get an MDX node representing a block of imports based on user config. */
+function generateImportsNode(config: ImportsConfig): MdxjsEsm {
+  const imports = processImportsConfig(config);
+  const js = imports.join('\n');
+  return generateMdxEsmNode(js);
+}
+
+/** Get an MDX node representing imports and export for default components. */
+function generateDefaultComponentsNode(config: DefaultComponentsConfig): MdxjsEsm {
+  const { imports, exportStatement } = processDefaultComponentsConfig(config);
+  const js = [...imports, exportStatement].join('\n');
+  return generateMdxEsmNode(js);
+}
+
+/** Check if the tree already has an `export const components` or `export { components }` */
+function hasComponentsExport(tree: { children: any[] }): boolean {
+  for (const node of tree.children) {
+    if (node.type !== 'mdxjsEsm') continue;
+    const estree = node.data?.estree;
+    if (!estree?.body) continue;
+
+    for (const statement of estree.body) {
+      // Check for: export const components = ...
+      if (
+        statement.type === 'ExportNamedDeclaration' &&
+        statement.declaration?.type === 'VariableDeclaration'
+      ) {
+        for (const decl of statement.declaration.declarations) {
+          if (decl.id?.name === 'components') {
+            return true;
+          }
+        }
+      }
+      // Check for: export { components } or export { something as components }
+      if (statement.type === 'ExportNamedDeclaration' && statement.specifiers) {
+        for (const spec of statement.specifiers) {
+          if (spec.exported?.name === 'components') {
+            return true;
+          }
+        }
+      }
+    }
+  }
+  return false;
 }
 
 export default function AutoImport(integrationConfig: AutoImportConfig): AstroIntegration {
@@ -110,15 +198,38 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         // Skip adding MDX plug-in if MDX is not being used.
         if (mdxIndex === -1) return;
 
+        // Pre-generate nodes
+        const importsNode = integrationConfig.imports
+          ? generateImportsNode(integrationConfig.imports)
+          : null;
+        const defaultComponentsNode = integrationConfig.defaultComponents
+          ? generateDefaultComponentsNode(integrationConfig.defaultComponents)
+          : null;
+
+        // Skip if nothing to inject
+        if (!importsNode && !defaultComponentsNode) return;
+
         // Add a remark plugin to inject imports into `.mdx`.
-        const importsNode = generateImportsNode(integrationConfig.imports);
         updateConfig({
           markdown: {
             remarkPlugins: [
               function rehypeInjectMdxImports() {
                 return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
-                  if (!vfile.basename?.endsWith('.md')) {
-                    tree.children.unshift(importsNode);
+                  if (vfile.basename?.endsWith('.md')) return;
+
+                  const nodesToInject: MdxjsEsm[] = [];
+
+                  if (importsNode) {
+                    nodesToInject.push(importsNode);
+                  }
+
+                  // Only inject defaultComponents if the file doesn't already export components
+                  if (defaultComponentsNode && !hasComponentsExport(tree)) {
+                    nodesToInject.push(defaultComponentsNode);
+                  }
+
+                  if (nodesToInject.length > 0) {
+                    tree.children.unshift(...nodesToInject);
                   }
                 };
               },
