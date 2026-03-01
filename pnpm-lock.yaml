@@ -15,8 +15,8 @@ importers:
         specifier: ^2.29.8
         version: 2.29.8(@types/node@20.19.33)
       astro:
-        specifier: ^5.17.2
-        version: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+        specifier: ^5.17.3
+        version: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
       tsm:
         specifier: ^2.3.0
         version: 2.3.0
@@ -31,16 +31,16 @@ importers:
     devDependencies:
       '@astrojs/mdx':
         specifier: ^4.3.13
-        version: 4.3.13(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
+        version: 4.3.13(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
       astro:
-        specifier: ^5.17.2
-        version: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+        specifier: ^5.17.3
+        version: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
       astro-auto-import:
         specifier: workspace:*
         version: link:../packages/astro-auto-import
       astro-embed:
         specifier: ^0.12.0
-        version: 0.12.0(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
+        version: 0.12.0(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
 
   packages/astro-auto-import:
     dependencies:
@@ -52,8 +52,8 @@ importers:
         specifier: ^20.19.33
         version: 20.19.33
       astro:
-        specifier: ^5.17.2
-        version: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+        specifier: ^5.17.3
+        version: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
       mdast-util-mdx:
         specifier: ^3.0.0
         version: 3.0.0
@@ -1007,8 +1007,8 @@ packages:
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0-alpha
 
-  astro@5.17.2:
-    resolution: {integrity: sha512-7jnMqGo53hOQNwo1N/wqeOvUp8wwW/p+DeerSjSkHNx8L/1mhy6P7rVo7EhdmF8DpKqw0tl/B5Fx1WcIzg1ysA==}
+  astro@5.18.0:
+    resolution: {integrity: sha512-CHiohwJIS4L0G6/IzE1Fx3dgWqXBCXus/od0eGUfxrZJD2um2pE7ehclMmgL/fXqbU7NfE1Ze2pq34h2QaA6iQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -2518,7 +2518,7 @@ snapshots:
     dependencies:
       '@astro-community/astro-embed-utils': 0.2.0
 
-  '@astro-community/astro-embed-integration@0.11.0(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))':
+  '@astro-community/astro-embed-integration@0.11.0(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))':
     dependencies:
       '@astro-community/astro-embed-bluesky': 0.1.6
       '@astro-community/astro-embed-gist': 0.1.0
@@ -2528,8 +2528,8 @@ snapshots:
       '@astro-community/astro-embed-vimeo': 0.3.12
       '@astro-community/astro-embed-youtube': 0.5.10
       '@types/unist': 3.0.3
-      astro: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
-      astro-auto-import: 0.4.6(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
+      astro: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+      astro-auto-import: 0.4.6(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
       unist-util-select: 5.1.0
 
   '@astro-community/astro-embed-link-preview@0.3.1':
@@ -2586,12 +2586,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/mdx@4.3.13(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))':
+  '@astrojs/mdx@4.3.13(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))':
     dependencies:
       '@astrojs/markdown-remark': 6.3.10
       '@mdx-js/mdx': 3.1.1
       acorn: 8.15.0
-      astro: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+      astro: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -3365,25 +3365,25 @@ snapshots:
 
   astring@1.8.3: {}
 
-  astro-auto-import@0.4.6(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)):
+  astro-auto-import@0.4.6(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)):
     dependencies:
       acorn: 8.15.0
-      astro: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+      astro: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
 
-  astro-embed@0.12.0(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)):
+  astro-embed@0.12.0(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)):
     dependencies:
       '@astro-community/astro-embed-baseline-status': 0.2.2
       '@astro-community/astro-embed-bluesky': 0.1.6
       '@astro-community/astro-embed-gist': 0.1.0
-      '@astro-community/astro-embed-integration': 0.11.0(astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
+      '@astro-community/astro-embed-integration': 0.11.0(astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3))
       '@astro-community/astro-embed-link-preview': 0.3.1
       '@astro-community/astro-embed-mastodon': 0.1.0
       '@astro-community/astro-embed-twitter': 0.5.11
       '@astro-community/astro-embed-vimeo': 0.3.12
       '@astro-community/astro-embed-youtube': 0.5.10
-      astro: 5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
+      astro: 5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3)
 
-  astro@5.17.2(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3):
+  astro@5.18.0(@types/node@20.19.33)(rollup@4.54.0)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 2.13.0
       '@astrojs/internal-helpers': 0.7.5
