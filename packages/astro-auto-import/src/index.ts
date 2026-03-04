@@ -97,9 +97,20 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
     hooks: {
       'astro:config:setup': ({ config, updateConfig }) => {
         // Check MDX integration is initialized after auto-import.
+        const starlight = config.integrations.findIndex((i) => i.name === '@astrojs/starlight');
         const mdxIndex = config.integrations.findIndex((i) => i.name === '@astrojs/mdx');
         const thisIndex = config.integrations.findIndex((i) => i.name === 'auto-import');
-        if (mdxIndex >= 0 && mdxIndex < thisIndex) {
+
+        if (starlight >= 0) {
+          // Starlight initializes MDX and auto-importing needs to be placed afterwards.
+          if (starlight > thisIndex) {
+            console.warn(
+              '[auto-import] ⚠️ @astrojs/starlight initialized AFTER astro-auto-import.\n' +
+                '              Auto imports in .mdx files won’t work!\n' +
+                '              Move the starlight integration before auto-import in your integrations array in astro.config.'
+            );
+          }
+        } else if (mdxIndex >= 0 && mdxIndex < thisIndex) {
           console.warn(
             '[auto-import] ⚠️ @astrojs/mdx initialized BEFORE astro-auto-import.\n' +
               '              Auto imports in .mdx files won’t work!\n' +
