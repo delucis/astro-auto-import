@@ -142,6 +142,53 @@ This config would import all the components in an index file, making them availa
 import * as Components from './src/components/index';
 ```
 
+#### `defaultComponents`
+
+**Type**: `Record<string, string | { name: string; from: string }>`
+
+A map of HTML element names to components that should override them in MDX. This allows you to replace default HTML elements like `<p>`, `<a>`, `<h1>`, etc. with custom components.
+
+> **Note:** Due to [a bug in @astrojs/mdx](https://github.com/withastro/astro/issues/14611), this feature requires `optimize: false` (the default). Starlight enables optimization by default, so you'll need to explicitly disable it:
+>
+> ```js
+> mdx({ optimize: false })
+> ```
+
+If an MDX file already exports its own `components` object, the auto-imported `defaultComponents` will be skipped to avoid conflicts.
+
+```js
+AutoImport({
+  imports: [
+    // ... your imports
+  ],
+  defaultComponents: {
+    // Use a default export from a file
+    // generates:
+    // import AUTO_IMPORT_p from './src/components/CustomParagraph.astro';
+    p: './src/components/CustomParagraph.astro',
+
+    // Use a named export from a file
+    // generates:
+    // import { CustomBlockquote as AUTO_IMPORT_blockquote } from './src/components/Components.ts';
+    blockquote: { name: 'CustomBlockquote', from: './src/components/Components.ts' },
+  },
+});
+```
+
+This will generate the necessary imports and export a `components` object that MDX uses to override default HTML elements:
+
+##### Equivalent to
+
+```js
+import AUTO_IMPORT_p from './src/components/CustomParagraph.astro';
+import { CustomBlockquote as AUTO_IMPORT_blockquote } from './src/components/Components.ts';
+
+export const components = {
+  p: AUTO_IMPORT_p,
+  blockquote: AUTO_IMPORT_blockquote,
+};
+```
+
 ## License
 
 MIT
