@@ -17,6 +17,9 @@ export default defineConfig({
           './src/components/barrel.ts': 'Barrel',
         },
       ],
+      defaultComponents: {
+        p: './src/components/CustomParagraph.astro',
+      },
     }),
     mdx(),
   ],

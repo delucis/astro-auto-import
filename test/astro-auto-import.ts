@@ -28,4 +28,18 @@ test('it should render components imported from a barrel module', () => {
   checkPage(loadPage('/barrel'));
 });
 
+test('it should override default HTML elements with defaultComponents', () => {
+  const page = loadPage('/');
+  // Check that paragraphs use the custom-paragraph class from CustomParagraph.astro
+  assert.match(page, /class="custom-paragraph"/);
+});
+
+test('it should skip defaultComponents when file has its own components export', () => {
+  const page = loadPage('/custom-components');
+  // The page defines its own components export with a custom link
+  assert.match(page, /class="custom-link"/);
+  // The auto-imported defaultComponents (custom-paragraph) should NOT be applied
+  assert.not.match(page, /class="custom-paragraph"/);
+});
+
 test.run();
