@@ -112,6 +112,15 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
 
         // Add a remark plugin to inject imports into `.mdx`.
         const importsNode = generateImportsNode(integrationConfig.imports);
+
+        if (config.markdown?.processor && config.markdown.processor.name !== 'unified') {
+          throw new Error(
+            '[auto-import] ⚠️ Found incompatible Markdown processor.\n' +
+              '              Currently only the unified processor is supported.\n' +
+              '              See https://docs.astro.build/en/guides/markdown-content/#switching-to-the-unified-processor',
+          );
+        }
+
         updateConfig({
           markdown: {
             remarkPlugins: [
