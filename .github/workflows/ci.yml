@@ -43,7 +43,7 @@ jobs:
         working-directory: packages/astro-auto-import
       - run: pnpm i astro@${{ matrix.astro }} @astrojs/mdx@${{ env.MDX_VERSION }}
         env:
-          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || '^6' }}
+          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || '^5' }}
         working-directory: demo
 
       - name: Test
