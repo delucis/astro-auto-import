@@ -21,8 +21,8 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
       uvu:
         specifier: ^0.5.6
         version: 0.5.6
@@ -58,8 +58,8 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
       typescript:
-        specifier: ^6.0.2
-        version: 6.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
       vfile:
         specifier: ^6.0.3
         version: 6.0.3
@@ -2075,8 +2075,8 @@ packages:
     engines: {node: '>=12'}
     hasBin: true
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4825,7 +4825,7 @@ snapshots:
     dependencies:
       esbuild: 0.15.18
 
-  typescript@6.0.2: {}
+  typescript@6.0.3: {}
 
   ufo@1.6.4: {}
 
