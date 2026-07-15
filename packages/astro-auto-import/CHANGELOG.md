@@ -1,5 +1,13 @@
 # astro-auto-import
 
+## 0.5.2
+
+### Patch Changes
+
+- [#158](https://github.com/delucis/astro-auto-import/pull/158) [`965278f`](https://github.com/delucis/astro-auto-import/commit/965278f416be1dfe63e1854c132030897d7c4a70) Thanks [@delucis](https://github.com/delucis)! - Adds basic support for Astro 7
+
+  N.B. Sätteri is not yet supported, you will need to [keep using the unified Markdown processor](https://docs.astro.build/en/guides/markdown-content/#switching-to-the-unified-processor) to use auto imports with Astro 7 for now.
+
 ## 0.5.1
 
 ### Patch Changes
