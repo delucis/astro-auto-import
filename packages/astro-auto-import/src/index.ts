@@ -122,19 +122,23 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
           );
         }
 
-        updateConfig({
-          markdown: {
-            remarkPlugins: [
-              function rehypeInjectMdxImports() {
-                return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
-                  if (!vfile.basename?.endsWith('.md')) {
-                    tree.children.unshift(importsNode);
-                  }
-                };
-              },
-            ],
+        const remarkPlugins = [
+          function rehypeInjectMdxImports() {
+            return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
+              if (!vfile.basename?.endsWith('.md')) {
+                tree.children.unshift(importsNode);
+              }
+            };
           },
-        });
+        ];
+
+        // @ts-ignore — When building against Astro v5, `config.markdown.processor` is not available.
+        if (config.markdown?.processor?.options) {
+          // @ts-ignore — When building against Astro v5, `config.markdown.processor` is not available.
+          updateConfig({ markdown: { processor: { options: { remarkPlugins } } } });
+        } else {
+          updateConfig({ markdown: { remarkPlugins } });
+        }
       },
     },
   };
