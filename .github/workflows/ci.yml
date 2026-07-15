@@ -45,6 +45,9 @@ jobs:
         env:
           MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || matrix.astro == '^6' && '^5' || '^7' }}
         working-directory: demo
+      - if: matrix.astro == '^5'
+        run: pnpm un @astrojs/markdown-remark
+        working-directory: demo
 
       - name: Test
         run: pnpm t

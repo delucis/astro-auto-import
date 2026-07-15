@@ -29,6 +29,9 @@ importers:
 
   demo:
     devDependencies:
+      '@astrojs/markdown-remark':
+        specifier: ^7.2.1
+        version: 7.2.1
       '@astrojs/mdx':
         specifier: ^7.0.3
         version: 7.0.3(@astrojs/markdown-satteri@0.3.4)(astro@7.0.8(@astrojs/markdown-remark@7.2.1)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(rollup@4.62.2))
