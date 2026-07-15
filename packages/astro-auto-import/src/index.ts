@@ -103,7 +103,7 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
           console.warn(
             '[auto-import] ⚠️ @astrojs/mdx initialized BEFORE astro-auto-import.\n' +
               '              Auto imports in .mdx files won’t work!\n' +
-              '              Move the MDX integration after auto-import in your integrations array in astro.config.'
+              '              Move the MDX integration after auto-import in your integrations array in astro.config.',
           );
         }
 
@@ -113,6 +113,7 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         // Add a remark plugin to inject imports into `.mdx`.
         const importsNode = generateImportsNode(integrationConfig.imports);
 
+        // @ts-ignore — When building against Astro v5, `config.markdown.processor` is not available.
         if (config.markdown?.processor && config.markdown.processor.name !== 'unified') {
           throw new Error(
             '[auto-import] ⚠️ Found incompatible Markdown processor.\n' +
