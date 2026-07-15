@@ -16,7 +16,6 @@ jobs:
   test:
     strategy:
       matrix:
-        node: [24.x]
         os: [ubuntu-latest, windows-latest]
         astro: [^5, alpha]
     runs-on: ${{ matrix.os }}
@@ -30,10 +29,10 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@08c4be7e2e672a47d11bd04269e27e5f3e8529cb # v6.0.0
 
-      - name: Setup Node.js ${{ matrix.node }}
+      - name: Setup Node.js
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 24.13.0
           cache: pnpm
 
       - name: Install Dependencies
