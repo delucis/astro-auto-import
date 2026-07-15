@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        astro: [^5, ^6]
+        astro: [^5, ^6, ^7]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -43,7 +43,10 @@ jobs:
         working-directory: packages/astro-auto-import
       - run: pnpm i astro@${{ matrix.astro }} @astrojs/mdx@${{ env.MDX_VERSION }}
         env:
-          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || '^5' }}
+          MDX_VERSION: ${{ matrix.astro == '^5' && '^4' || matrix.astro == '^6' && '^5' || '^7' }}
+        working-directory: demo
+      - if: matrix.astro == '^5'
+        run: pnpm un @astrojs/markdown-remark
         working-directory: demo
 
       - name: Test
