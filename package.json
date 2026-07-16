@@ -10,7 +10,7 @@
     "@changesets/cli": "^2.31.0",
     "astro": "^7.0.8",
     "tsm": "^2.3.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "uvu": "^0.5.6"
   },
   "packageManager": "pnpm@10.34.5+sha512.a4ee05f2f73658255bd6a89859c065a45c28a57daefae2c893a168ee2b73168c37b91e83e57ea67654ad03f03031746430e8bce38e362e042605fb8abc80192e"
