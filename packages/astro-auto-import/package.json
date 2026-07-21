@@ -32,7 +32,7 @@
   ],
   "devDependencies": {
     "@types/node": "^20.19.43",
-    "astro": "^7.0.8",
+    "astro": "^7.1.0",
     "mdast-util-mdx": "^3.0.0",
     "typescript": "^7.0.2",
     "vfile": "^6.0.3"
