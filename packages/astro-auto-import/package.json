@@ -34,6 +34,7 @@
     "@types/node": "^20.19.43",
     "astro": "^7.2.2",
     "mdast-util-mdx": "^3.0.0",
+    "satteri": "^0.10.5",
     "typescript": "^7.0.2",
     "vfile": "^6.0.3"
   },
