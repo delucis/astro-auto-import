@@ -18,6 +18,14 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         astro: [^5, ^6, ^7]
+        processor: [default]
+        include:
+          - os: ubuntu-latest
+            astro: ^7
+            processor: unified
+          - os: windows-latest
+            astro: ^7
+            processor: unified
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -51,3 +59,5 @@ jobs:
 
       - name: Test
         run: pnpm t
+        env:
+          MARKDOWN_PROCESSOR: ${{ matrix.processor }}
