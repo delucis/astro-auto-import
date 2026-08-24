@@ -1,5 +1,13 @@
 # astro-auto-import
 
+## 0.6.0
+
+### Minor Changes
+
+- [#173](https://github.com/delucis/astro-auto-import/pull/173) [`8e62391`](https://github.com/delucis/astro-auto-import/commit/8e623914d07894a2b934da7c251ef5bfae34f980) Thanks [@xsynaptic](https://github.com/xsynaptic)! - Adds support for the Sätteri Markdown processor, which is Astro 7’s default.
+
+  **⚠️ BREAKING CHANGE:** Drops support for versions of Astro lower than 7.2.4.
+
 ## 0.5.2
 
 ### Patch Changes
