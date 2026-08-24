@@ -1,5 +1,5 @@
 import { parse as parseJs } from 'acorn';
-import type { AstroIntegration } from 'astro';
+import type { AstroConfig, AstroIntegration } from 'astro';
 import type { MdxjsEsm } from 'mdast-util-mdx';
 import { parse, resolve } from 'node:path';
 import type { MdastPluginDefinition } from 'satteri';
@@ -19,9 +19,14 @@ interface AutoImportConfig {
   imports: ImportsConfig;
 }
 
-/** Astro 5 has no `markdown.processor`, so read it structurally instead of from Astro’s types. */
+/**
+ * A custom type for the Markdown configuration that reflects that the processor config can vary
+ * from project to project and between Astro versions.
+ */
 interface MarkdownConfig {
-  processor?: { name: string; options: { mdastPlugins: MdastPluginDefinition[] } };
+  processor?:
+    | { name: 'satteri'; options: { mdastPlugins: MdastPluginDefinition[] } }
+    | { name: 'unified'; options: { remarkPlugins: AstroConfig['markdown']['remarkPlugins'] } };
 }
 
 /**
@@ -116,6 +121,19 @@ function generateSatteriPlugin(config: ImportsConfig): MdastPluginDefinition {
   };
 }
 
+/** Generate a remark plugin that injects a block of imports based on user config. */
+function generateRemarkPlugin(config: ImportsConfig) {
+  const importsNode = generateImportsNode(config);
+
+  return function rehypeInjectMdxImports() {
+    return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
+      if (!vfile.basename?.endsWith('.md')) {
+        tree.children.unshift(importsNode);
+      }
+    };
+  };
+}
+
 export default function AutoImport(integrationConfig: AutoImportConfig): AstroIntegration {
   return {
     name: 'auto-import',
@@ -153,21 +171,16 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
         }
 
         // Add a remark plugin to inject imports into `.mdx`.
-        const importsNode = generateImportsNode(integrationConfig.imports);
-
-        updateConfig({
-          markdown: {
-            remarkPlugins: [
-              function rehypeInjectMdxImports() {
-                return function injectMdxImports(tree: { children: any[] }, vfile: VFile) {
-                  if (!vfile.basename?.endsWith('.md')) {
-                    tree.children.unshift(importsNode);
-                  }
-                };
-              },
-            ],
-          },
-        });
+        if (processor?.name === 'unified') {
+          // Since Astro 7, adding the plugin this way avoids a warning about using the deprecated
+          // `markdown.remarkPlugins` config.
+          processor.options.remarkPlugins.push(generateRemarkPlugin(integrationConfig.imports));
+        } else {
+          // For older versions of Astro, we use the `markdown.remarkPlugins` config instead.
+          updateConfig({
+            markdown: { remarkPlugins: [generateRemarkPlugin(integrationConfig.imports)] },
+          });
+        }
       },
     },
   };
