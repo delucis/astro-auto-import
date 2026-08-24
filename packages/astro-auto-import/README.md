@@ -14,7 +14,7 @@ If you aren’t already using MDX, you’ll need to add it too:
 npx astro add mdx
 ```
 
-Auto imports work with both of Astro’s Markdown processors. If you use [Sätteri](https://github.com/bruits/satteri), Astro 7’s default, you’ll need Astro 7.2.4 or later: earlier Astro 7 releases ship a Sätteri version without the plugin hook this integration uses.
+`astro-auto-import` supports both of Astro’s official [Markdown processors](https://docs.astro.build/en/guides/markdown-content/#markdown-processors), Sätteri and Unified. Support for Sätteri requires Astro v7.2.4 or later.
 
 ## Usage
 
