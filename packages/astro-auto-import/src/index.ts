@@ -153,33 +153,28 @@ export default function AutoImport(integrationConfig: AutoImportConfig): AstroIn
           return;
         }
 
-        if (processor && processor.name !== 'unified') {
-          throw new Error(
-            '[auto-import] ⚠️ Found incompatible Markdown processor.\n' +
-              '              Only the unified and Sätteri processors are supported.\n' +
-              '              See https://docs.astro.build/en/guides/markdown-content/#markdown-processors',
-          );
-        }
-
-        // Check MDX integration is initialized after auto-import.
-        if (mdxIndex < thisIndex) {
-          console.warn(
-            '[auto-import] ⚠️ @astrojs/mdx initialized BEFORE astro-auto-import.\n' +
-              '              Auto imports in .mdx files won’t work!\n' +
-              '              Move the MDX integration after auto-import in your integrations array in astro.config.',
-          );
-        }
-
         // Add a remark plugin to inject imports into `.mdx`.
-        const remarkPlugin = generateRemarkPlugin(integrationConfig.imports);
         if (processor?.name === 'unified') {
-          // Since Astro 7, adding the plugin this way avoids a warning about using the deprecated
-          // `markdown.remarkPlugins` config.
-          processor.options.remarkPlugins.push(remarkPlugin);
-        } else {
-          // For older versions of Astro, we use the `markdown.remarkPlugins` config instead.
-          updateConfig({ markdown: { remarkPlugins: [remarkPlugin] } });
+          // Check MDX integration is initialized after auto-import.
+          if (mdxIndex < thisIndex) {
+            console.warn(
+              '[auto-import] ⚠️ @astrojs/mdx initialized BEFORE astro-auto-import.\n' +
+                '              Auto imports in .mdx files won’t work!\n' +
+                '              Move the MDX integration after auto-import in your integrations array in astro.config.',
+            );
+          }
+
+          processor.options.remarkPlugins.push(generateRemarkPlugin(integrationConfig.imports));
+
+          return;
         }
+
+        // If we reach this point, the Markdown processor is not supported.
+        throw new Error(
+          '[auto-import] ⚠️ Found incompatible Markdown processor.\n' +
+            '              Only the unified and Sätteri processors are supported.\n' +
+            '              See https://docs.astro.build/en/guides/markdown-content/#markdown-processors',
+        );
       },
     },
   };
