@@ -13,6 +13,6 @@
     "@astrojs/mdx": "^7.0.5",
     "astro": "^7.2.4",
     "astro-auto-import": "workspace:*",
-    "astro-embed": "^0.13.1"
+    "astro-embed": "^0.14.0"
   }
 }

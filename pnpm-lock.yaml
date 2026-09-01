@@ -45,8 +45,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/astro-auto-import
       astro-embed:
-        specifier: ^0.13.1
-        version: 0.13.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)
+        specifier: ^0.14.0
+        version: 0.14.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)
 
   packages/astro-auto-import:
     dependencies:
@@ -84,10 +84,10 @@ packages:
   '@astro-community/astro-embed-gist@0.1.0':
     resolution: {integrity: sha512-wP3EoBZZjDoPLH6TZzem8jDJxOuweDoK5zWmSra0QBKz3Lry1tZGCwKII5mlnOL2AmTKLrfqrBXTxSGwb7AimQ==}
 
-  '@astro-community/astro-embed-integration@0.12.1':
-    resolution: {integrity: sha512-c0OFLOWnfJ/nOE/pTaSp50PIbcijZ0UeTcn8+/pDuIIGTIAH+Z2LYtxpG5+wktXnxarr47Ed7WEVcKHFV75TLQ==}
+  '@astro-community/astro-embed-integration@0.13.0':
+    resolution: {integrity: sha512-lHan0L43UIdFZYomXn9s/9zd5a5Z+w82D0Gs2PjarWG5MUbHPMcuaLbbFLxASEeDaBBM0BexT4/G+8W+5qLvIQ==}
     peerDependencies:
-      astro: ^5.0.0 || ^6.0.0-alpha || ^7.0.0
+      astro: ^7.2.4
 
   '@astro-community/astro-embed-link-preview@0.3.1':
     resolution: {integrity: sha512-TI++efm08+kJqxqA7bvxBr7+Zt4yCceA6s3wvAQJ87eiaxbLqAFUSQ+paQD66ET9dIC+IuKzHOMwsoDfqBidYw==}
@@ -1094,14 +1094,13 @@ packages:
     resolution: {integrity: sha512-sRpyiNrx2dEYIMmUXprS8nlpRg2Drs8m9ElX9vVEXaCB4XEAJhKfs7IcX0IwShjuOAjLR6wzIrgoptz1n19i1A==}
     hasBin: true
 
-  astro-auto-import@0.5.1:
-    resolution: {integrity: sha512-7YZKVA7LE5nLkopOM+KIHqnh6g2CfHrysj2JUXNBrC3FppHH42RSNBM7mgsEgaq2lgHVDt7hsDQIA0JKTwIN8A==}
-    engines: {node: '>=20.0.0'}
+  astro-auto-import@0.6.0:
+    resolution: {integrity: sha512-ru98hrmIZcLvNIcQWtGHKlYE2C+5+8dp86vGnDiGpdmqcFcG/Tn7uNVGhF1CUkvxNRtE+YZhmWTD94lnxY++rA==}
     peerDependencies:
-      astro: ^5.0.0-beta || ^6.0.0-alpha
+      astro: ^7.2.4
 
-  astro-embed@0.13.1:
-    resolution: {integrity: sha512-X79C+Uh9wA4JWkBRTk6drLpOfzqpPlibAL/p0MTV2811canAPzF9Sv9Bq3gdUSCDCQXRFxTVsW89CKtDkg8xqA==}
+  astro-embed@0.14.0:
+    resolution: {integrity: sha512-VpOnmbeReZvjhK9SYEEsGKZOXBJtrSBMohkVnUwi2ue+qZ19jhM5I3p6SE1NYTi6NY2yoRKJb8J2OtjVDR3lMQ==}
     peerDependencies:
       astro: ^5.0.0 || ^6.0.0-alpha || ^7.0.0
 
@@ -2401,7 +2400,7 @@ snapshots:
     dependencies:
       '@astro-community/astro-embed-utils': 0.2.0
 
-  '@astro-community/astro-embed-integration@0.12.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)':
+  '@astro-community/astro-embed-integration@0.13.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)':
     dependencies:
       '@astro-community/astro-embed-bluesky': 0.2.3(typescript@7.0.2)
       '@astro-community/astro-embed-gist': 0.1.0
@@ -2412,7 +2411,7 @@ snapshots:
       '@astro-community/astro-embed-youtube': 0.5.10
       '@types/unist': 3.0.3
       astro: 7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0)
-      astro-auto-import: 0.5.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))
+      astro-auto-import: 0.6.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))
       unist-util-select: 5.1.0
     transitivePeerDependencies:
       - typescript
@@ -3316,17 +3315,17 @@ snapshots:
 
   astring@1.8.3: {}
 
-  astro-auto-import@0.5.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0)):
+  astro-auto-import@0.6.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0)):
     dependencies:
       acorn: 8.18.0
       astro: 7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0)
 
-  astro-embed@0.13.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2):
+  astro-embed@0.14.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2):
     dependencies:
       '@astro-community/astro-embed-baseline-status': 0.2.2
       '@astro-community/astro-embed-bluesky': 0.2.3(typescript@7.0.2)
       '@astro-community/astro-embed-gist': 0.1.0
-      '@astro-community/astro-embed-integration': 0.12.1(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)
+      '@astro-community/astro-embed-integration': 0.13.0(astro@7.2.4(@astrojs/markdown-remark@7.2.4)(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.2)(@types/node@20.19.43)(yaml@2.9.0))(typescript@7.0.2)
       '@astro-community/astro-embed-link-preview': 0.3.1
       '@astro-community/astro-embed-mastodon': 0.1.1
       '@astro-community/astro-embed-twitter': 0.5.11
