@@ -6,8 +6,8 @@
     "test": "pnpm -r build && tsm node_modules/uvu/bin.js test"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^1.0.0",
-    "@changesets/cli": "^3.0.1",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.2",
     "astro": "^7.2.9",
     "prettier": "^3.9.6",
     "tsm": "^2.3.0",
