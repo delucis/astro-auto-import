@@ -8,7 +8,7 @@
   "devDependencies": {
     "@changesets/changelog-github": "^1.0.1",
     "@changesets/cli": "^3.0.3",
-    "astro": "^7.3.2",
+    "astro": "^7.3.5",
     "prettier": "^3.9.9",
     "tsm": "^2.3.0",
     "typescript": "^7.0.2",
