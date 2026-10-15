@@ -31,7 +31,7 @@
     "auto-import"
   ],
   "devDependencies": {
-    "@types/node": "^22.20.4",
+    "@types/node": "^22.20.5",
     "astro": "^7.3.5",
     "mdast-util-mdx": "^3.0.0",
     "satteri": "^0.10.5",
