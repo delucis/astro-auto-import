@@ -39,7 +39,7 @@
     "vfile": "^6.0.3"
   },
   "dependencies": {
-    "acorn": "^8.18.0"
+    "acorn": "^8.19.0"
   },
   "peerDependencies": {
     "astro": "^7.2.4"
