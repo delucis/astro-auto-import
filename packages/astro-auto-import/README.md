@@ -63,7 +63,7 @@ export default defineConfig({
 
 #### `imports`
 
-**Type**: `(string | Record<string, (string | [string, string])[]>)[]`
+**Type**: `(string | Record<string, string | (string | [string, string])[]>)[]`
 
 An array of items that configure what files are imported and how.
 
