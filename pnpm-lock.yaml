@@ -1,3 +1,161 @@
+---
+lockfileVersion: '9.0'
+
+importers:
+
+  .:
+    configDependencies: {}
+    packageManagerDependencies:
+      pnpm:
+        specifier: 12.14.0
+        version: 12.14.0
+
+packages:
+
+  '@pnpm/exe.android-arm64@12.14.0':
+    resolution: {integrity: sha512-+iSh7x21C3A2hqc+Z0ZmbKTcn6YNlzrXM142PsnQH/dLj0DYxFzoBvc6XAnL/yfQ5nnH2ebBiRj/zVxr61fZbQ==}
+    cpu: [arm64]
+    os: [android]
+
+  '@pnpm/exe.android-x64@12.14.0':
+    resolution: {integrity: sha512-qT+0LqEr2wBVaxcG2T8cX/R8SSRz2Rvpp8nRR4fh8tnGUZRch87gFmsHUAoSQh7w6j1h0qTjrA384j4xi8frvw==}
+    cpu: [x64]
+    os: [android]
+
+  '@pnpm/exe.darwin-arm64@12.14.0':
+    resolution: {integrity: sha512-tnrdUB8ecJoehuKKqi1YHCBVl61xtJ9XVGcx5EviC6fWO4DeGI8GtXrjvJxDBM3nuVjJeWistgsUp/N142x4sw==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@pnpm/exe.darwin-x64@12.14.0':
+    resolution: {integrity: sha512-vlBfGkruqQRsEHTW43cPwpYd7QlbIJ//cvpAdb3bVXkI8SgTPoXhCnc05m+ZNiPrrEkBsX/t7KHw9aXpkzPm3Q==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@pnpm/exe.freebsd-x64@12.14.0':
+    resolution: {integrity: sha512-Qg5rxBrGYl6Tfso+EyygPf84fY1Fzy55E/0or+iuYKtnf0vc0MlHJfVIlT7pBukMRntQHRik7hUi0Z4s7AlJsw==}
+    cpu: [x64]
+    os: [freebsd]
+
+  '@pnpm/exe.linux-arm64-musl@12.14.0':
+    resolution: {integrity: sha512-DRIe4yQkXBGA/PhVJdzlbnllxBdAtnMMvTVLLcGpsK5FvJz9kxD2Hyxtn68ovmNkVX06f6p45cQwfm3wx2jn1A==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-arm64@12.14.0':
+    resolution: {integrity: sha512-7joGShZ44Nk3WpNU+60JoOPjCXlgxhJAq11S2UiVtwCUDgTer1yTPPfxGW8pxaD6046actYLIYDbZNlubHWs0A==}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-ppc64@12.14.0':
+    resolution: {integrity: sha512-gSoryn7ySdXd//gjgf3MvvA8ZerJayaSbuMZMtAWq4vb2/wlVEgpl0Kvqt54y58TRj533Qjq2txKgnxd4JyoAQ==}
+    cpu: [ppc64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-riscv64@12.14.0':
+    resolution: {integrity: sha512-EMjew1H9WqQ7pL+tYqCPwiuB+0PeCiJRV7fyWeuFw0wwYUajFBjcaPO3IGAVu9sdmJDU+e+HYv/Zey6aKae0Vw==}
+    cpu: [riscv64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-s390x@12.14.0':
+    resolution: {integrity: sha512-shYOj/SFoXD35fHe0pWr2JofwSXulC0BnEIXLj2QokDi0EF//AfKsui35yKIkTEl+s2VJybc3PO4iJNhKIj5Qw==}
+    cpu: [s390x]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.linux-x64-musl@12.14.0':
+    resolution: {integrity: sha512-btZiZ2Ot0llKK1ndSfA5i3IRX7/S0VrmzseNH/BJ4c+Cady+S81H6vvU1zByggHMyqQhC8OgxO5PiIY7D9bH0Q==}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+
+  '@pnpm/exe.linux-x64@12.14.0':
+    resolution: {integrity: sha512-F6K8e/jWxiuEYJaQtRRUG9ynBSTEHa+t7Lf86MKuOO5UA7WVVMbi+oB8nY6iKW++ncWS2yG6T9faXZGxqNsfoQ==}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+
+  '@pnpm/exe.win32-arm64@12.14.0':
+    resolution: {integrity: sha512-DOjlkVB6TtTKeAAe0hNZXn5S7YqESmo1Z6SGbR4BZNQ4isRg31XVHjX2RFTbY8gnZq68IwzyLmPqlEjMmYxofg==}
+    cpu: [arm64]
+    os: [win32]
+
+  '@pnpm/exe.win32-x64@12.14.0':
+    resolution: {integrity: sha512-/LSX6mew/sLf08XqcjemuklNKf1K/Ftpgj4//hK/HKzI2dKbmxDB27a/2OaQ5a0O3/3OFzlssXDziZsi+yVBwQ==}
+    cpu: [x64]
+    os: [win32]
+
+  pnpm@12.14.0:
+    resolution: {integrity: sha512-wYum2HmT09Fky16JSPMrLAbuhUSH4GzY2GeBNC+z5btGNDZwNHEehoArqpw3vqkGzhkprQjXCITJfYAd8TOJpg==}
+    engines: {node: '>=18.*'}
+    hasBin: true
+
+snapshots:
+
+  '@pnpm/exe.android-arm64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.android-x64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.darwin-arm64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.darwin-x64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.freebsd-x64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64-musl@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-arm64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-ppc64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-riscv64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-s390x@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64-musl@12.14.0':
+    optional: true
+
+  '@pnpm/exe.linux-x64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.win32-arm64@12.14.0':
+    optional: true
+
+  '@pnpm/exe.win32-x64@12.14.0':
+    optional: true
+
+  pnpm@12.14.0:
+    optionalDependencies:
+      '@pnpm/exe.android-arm64': 12.14.0
+      '@pnpm/exe.android-x64': 12.14.0
+      '@pnpm/exe.darwin-arm64': 12.14.0
+      '@pnpm/exe.darwin-x64': 12.14.0
+      '@pnpm/exe.freebsd-x64': 12.14.0
+      '@pnpm/exe.linux-arm64': 12.14.0
+      '@pnpm/exe.linux-arm64-musl': 12.14.0
+      '@pnpm/exe.linux-ppc64': 12.14.0
+      '@pnpm/exe.linux-riscv64': 12.14.0
+      '@pnpm/exe.linux-s390x': 12.14.0
+      '@pnpm/exe.linux-x64': 12.14.0
+      '@pnpm/exe.linux-x64-musl': 12.14.0
+      '@pnpm/exe.win32-arm64': 12.14.0
+      '@pnpm/exe.win32-x64': 12.14.0
+
+---
 lockfileVersion: '9.0'
 
 settings:
@@ -16,7 +174,7 @@ importers:
         version: 3.0.3
       astro:
         specifier: ^7.3.8
-        version: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+        version: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
@@ -37,16 +195,16 @@ importers:
         version: 7.3.2(supports-color@7.2.0)
       '@astrojs/mdx':
         specifier: ^8.0.3
-        version: 8.0.3(@astrojs/markdown-remark@7.3.2)(@astrojs/markdown-satteri@0.4.3)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))
+        version: 8.0.3(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@astrojs/markdown-satteri@0.4.3)(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))
       astro:
         specifier: ^7.3.8
-        version: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+        version: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
       astro-auto-import:
         specifier: workspace:*
         version: link:../packages/astro-auto-import
       astro-embed:
         specifier: ^0.14.0
-        version: 0.14.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)
+        version: 0.14.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)
 
   packages/astro-auto-import:
     dependencies:
@@ -59,7 +217,7 @@ importers:
         version: 22.20.5
       astro:
         specifier: ^7.3.8
-        version: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+        version: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
       mdast-util-mdx:
         specifier: ^3.0.0
         version: 3.0.0(supports-color@7.2.0)
@@ -2382,7 +2540,7 @@ snapshots:
     dependencies:
       '@astro-community/astro-embed-utils': 0.2.0
 
-  '@astro-community/astro-embed-integration@0.13.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)':
+  '@astro-community/astro-embed-integration@0.13.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)':
     dependencies:
       '@astro-community/astro-embed-bluesky': 0.2.3(typescript@7.0.2)
       '@astro-community/astro-embed-gist': 0.1.0
@@ -2392,8 +2550,8 @@ snapshots:
       '@astro-community/astro-embed-vimeo': 0.3.12
       '@astro-community/astro-embed-youtube': 0.5.10
       '@types/unist': 3.0.3
-      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
-      astro-auto-import: 0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+      astro-auto-import: 0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))
       unist-util-select: 5.1.0
     transitivePeerDependencies:
       - typescript
@@ -2518,11 +2676,11 @@ snapshots:
       github-slugger: 2.0.0
       satteri: 0.10.5
 
-  '@astrojs/mdx@8.0.3(@astrojs/markdown-remark@7.3.2)(@astrojs/markdown-satteri@0.4.3)(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))':
+  '@astrojs/mdx@8.0.3(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@astrojs/markdown-satteri@0.4.3)(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))':
     dependencies:
       '@astrojs/internal-helpers': 0.12.0
       '@astrojs/markdown-satteri': 0.4.3
-      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
       es-module-lexer: 3.0.3
     optionalDependencies:
       '@astrojs/markdown-remark': 7.3.2(supports-color@7.2.0)
@@ -3254,27 +3412,27 @@ snapshots:
 
   astring@1.8.3: {}
 
-  astro-auto-import@0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)):
+  astro-auto-import@0.6.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)):
     dependencies:
       acorn: 8.19.0
-      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
 
-  astro-embed@0.14.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2):
+  astro-embed@0.14.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2):
     dependencies:
       '@astro-community/astro-embed-baseline-status': 0.2.2
       '@astro-community/astro-embed-bluesky': 0.2.3(typescript@7.0.2)
       '@astro-community/astro-embed-gist': 0.1.0
-      '@astro-community/astro-embed-integration': 0.13.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)
+      '@astro-community/astro-embed-integration': 0.13.0(astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1))(typescript@7.0.2)
       '@astro-community/astro-embed-link-preview': 0.3.1
       '@astro-community/astro-embed-mastodon': 0.1.1
       '@astro-community/astro-embed-twitter': 0.5.11
       '@astro-community/astro-embed-vimeo': 0.3.12
       '@astro-community/astro-embed-youtube': 0.5.10
-      astro: 7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
+      astro: 7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1)
     transitivePeerDependencies:
       - typescript
 
-  astro@7.3.8(@astrojs/markdown-remark@7.3.2)(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1):
+  astro@7.3.8(@astrojs/markdown-remark@7.3.2(supports-color@7.2.0))(@types/node@22.20.5)(esbuild@0.28.1)(yaml@2.9.1):
     dependencies:
       '@astrojs/compiler-rs': 0.5.1
       '@astrojs/internal-helpers': 0.12.0
