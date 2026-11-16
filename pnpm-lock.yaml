@@ -15,7 +15,7 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3
       astro:
-        specifier: ^7.4.10
+        specifier: ^7.4.11
         version: 7.4.12(@astrojs/markdown-remark@7.3.9)(@types/node@26.6.6)(esbuild@0.28.1)(yaml@2.9.1)
       prettier:
         specifier: ^3.10.1
@@ -33,13 +33,13 @@ importers:
   demo:
     devDependencies:
       '@astrojs/markdown-remark':
-        specifier: ^7.3.7
+        specifier: ^7.3.8
         version: 7.3.9(supports-color@7.2.0)
       '@astrojs/mdx':
-        specifier: ^8.1.4
+        specifier: ^8.1.5
         version: 8.1.6(@astrojs/markdown-remark@7.3.9)(@astrojs/markdown-satteri@0.4.10)(astro@7.4.12(@astrojs/markdown-remark@7.3.9)(@types/node@26.6.6)(esbuild@0.28.1)(yaml@2.9.1))
       astro:
-        specifier: ^7.4.10
+        specifier: ^7.4.11
         version: 7.4.12(@astrojs/markdown-remark@7.3.9)(@types/node@26.6.6)(esbuild@0.28.1)(yaml@2.9.1)
       astro-auto-import:
         specifier: workspace:*
@@ -58,7 +58,7 @@ importers:
         specifier: ^26.6.6
         version: 26.6.6
       astro:
-        specifier: ^7.4.10
+        specifier: ^7.4.11
         version: 7.4.12(@astrojs/markdown-remark@7.3.9)(@types/node@26.6.6)(esbuild@0.28.1)(yaml@2.9.1)
       mdast-util-mdx:
         specifier: ^3.0.0
