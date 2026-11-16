@@ -9,9 +9,9 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/markdown-remark": "^7.3.7",
-    "@astrojs/mdx": "^8.1.4",
-    "astro": "^7.4.10",
+    "@astrojs/markdown-remark": "^7.3.8",
+    "@astrojs/mdx": "^8.1.5",
+    "astro": "^7.4.11",
     "astro-auto-import": "workspace:*",
     "astro-embed": "^0.14.0"
   }
