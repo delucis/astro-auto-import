@@ -18,7 +18,7 @@ importers:
         specifier: ^7.4.10
         version: 7.4.12(@astrojs/markdown-remark@7.3.9)(@types/node@26.6.6)(esbuild@0.28.1)(yaml@2.9.1)
       prettier:
-        specifier: ^3.10.0
+        specifier: ^3.10.1
         version: 3.10.1
       tsm:
         specifier: ^2.3.0
